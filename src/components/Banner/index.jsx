@@ -13,10 +13,12 @@ const ImageWrapper = styled.div`
 `;
 
 const BannerWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    min-width: 16em;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    grid-gap: 1em;
+    padding: 1.5em;
 `;
 
 function DynamicImage(props) {
