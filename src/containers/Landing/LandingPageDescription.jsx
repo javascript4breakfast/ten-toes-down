@@ -28,7 +28,8 @@ const ButtonContainer = styled.div`
     margin-top: 16px;
     
     @media (max-width: 525px) {
-        grid-gap: 0.333em;
+        grid-gap: 0;
+        font-size: 0.5em;
     }
 `;
 
@@ -44,6 +45,7 @@ const DescriptionContainer = styled.div`
     }
 
     @media (max-width: 625px) {
+        padding: 0;
 
         .child {
             grid-column: 2 / 12;
