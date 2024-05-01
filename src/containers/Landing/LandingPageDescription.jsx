@@ -26,6 +26,10 @@ const ButtonContainer = styled.div`
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
     margin-top: 16px;
+    
+    @media (max-width: 525px) {
+        grid-gap: 0.333em;
+    }
 `;
 
 const DescriptionContainer = styled.div`
@@ -62,7 +66,7 @@ const VinesContainer = styled.div`
     top: 2px;
     img {
         transform: rotate(180deg) scaleX(-1);
-        max-height: 5rem;
+        max-height: 3.8em;
     }
 `;
 
