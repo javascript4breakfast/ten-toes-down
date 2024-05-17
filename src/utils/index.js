@@ -26,8 +26,19 @@ function pad (string) {
     return ('0' + string).slice(-2)
 }
 
+const truncateString = (string = '', maxLength) => 
+  string.length > maxLength 
+    ? `${string.substring(0, maxLength)}…`
+    : string
+
+function randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
 export {
     pad,
     format,
     sanitizeValue,
+    randomDate,
+    truncateString
 }

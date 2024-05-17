@@ -1,35 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
-import Banner from '../../components/Banner';
-import BentoBox from './BentoBox';
-import CookieAgreement from './CookieAgreement';
+import Jumbotron from './Jumbotron';
+import FeatureSection from './FeatureSection';
 import NavigationWidget from './NavigationWidget';
-import LandingPageDescription from './LandingPageDescription';
+import CookieAgreement from './CookieAgreement';
 import GlobalFooter from '../../components/GlobalFooter';
 
-const LandingPageGrid = styled.div``;
+import { LandingPageGridItem } from '../../styled';
 
-const LandingPageWrapper = styled.div`
+const LandingPageGrid = styled.div`
     display: grid;
-`;
-
-const LowerLandingPageGrid = styled.div`
-    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem 0.8rem;
 `;
 
 export default function LandingPage() {
     return (
-        <LandingPageWrapper>
-            <NavigationWidget />
+        <LandingPageGrid>
+            <LandingPageGridItem>
+                <NavigationWidget />
+            </LandingPageGridItem>
             <CookieAgreement />
-            <LandingPageGrid>
-                <Banner />
-                <LandingPageDescription />
-            </LandingPageGrid>
-            <LowerLandingPageGrid>
-                <BentoBox />
+            <Jumbotron />
+            <FeatureSection />
+            <LandingPageGridItem>
                 <GlobalFooter />
-            </LowerLandingPageGrid>
-        </LandingPageWrapper>
+            </LandingPageGridItem>
+        </LandingPageGrid>
     );
 }

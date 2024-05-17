@@ -12,10 +12,9 @@ import useTheme from '../../hooks/useTheme';
 
 const NavigationContainer = styled.nav`
     display: grid;
-    grid-template-columns: 2rem 2rem auto;
-    grid-gap: 1.333em;
-    align-items: center;
-    padding: 0.8em;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+    margin-top: 1em;
 `;
 
 export default function NavigationWidget() {
@@ -24,19 +23,21 @@ export default function NavigationWidget() {
 
     return (
         <NavigationContainer>
-                <ActionButton
-                    aria-label="Icon only"
-                    onPress={toggleTheme}
+            <ActionButton
+                aria-label="Icon only"
+                onPress={toggleTheme}
                 >
                     {state.colorScheme === 'dark' ? (<TbMoonStars />) : (<TbSunLow />)}
                 </ActionButton>
 
                 <ActionButton
-                    aria-label="Icon only"
-                    onPress={toggleScale}
+                aria-label="Icon only"
+                onPress={toggleScale}
                 >
                     {state.scale === 'large' ? (<TbDeviceDesktop />) : (<TbDeviceMobile />)}
                 </ActionButton>
         </NavigationContainer>
     );
 }
+
+

@@ -22,9 +22,7 @@ const landingPageAttributes = {
 const getRandomHeadline = arr => arr[Math.floor(Math.random() * arr.length)];
 
 const ButtonContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
+
     margin-top: 16px;
     
     @media (max-width: 525px) {

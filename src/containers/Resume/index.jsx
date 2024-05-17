@@ -14,7 +14,6 @@ import logoAlt from '../../clientlibs/img/js4b_alt.png';
 const ResumePageContainer = styled.div`
     display: grid;
     padding: 16px 16px 80px 16px;
-    border:t thin solid red;
 `;
 
 const ImageAndInfoContainer = styled.div`

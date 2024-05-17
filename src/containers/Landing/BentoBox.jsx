@@ -28,6 +28,7 @@ const messages = {
 
 const BentoBoxGridWrapper = styled.div`
     display: grid;
+    border: thin solid red;
     min-height: 10em;
     grid-template-columns: repeat(12, 1fr);
     font-size: 1.333em;

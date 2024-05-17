@@ -33,14 +33,13 @@ export default function TopNav(props) {
         <NavbarContainer>
             <div className='nav-btn'>
                 <div>
-                    <ActionButton onPress={() => navigate('/')}>
+                    <ActionButton onPress={() => navigate(-1)}>
                         <div className='icon-btn-wrapper'>
                             <TbArrowBigLeft className='icon' />
                         </div>
                     </ActionButton>
                 </div>      
             </div>
-
             <div className='theme-btns'>
                 <div className='theme-btn'>
                     <ActionButton onPress={toggleScale}>
@@ -54,8 +53,6 @@ export default function TopNav(props) {
                     </ActionButton>
                 </div>
             </div>
-
-           
         </NavbarContainer>
     );
 }

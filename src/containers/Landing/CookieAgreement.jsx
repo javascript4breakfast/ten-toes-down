@@ -13,6 +13,8 @@ import {
 import styled from 'styled-components';
 import { AppContext } from '../../context/AppContext';
 import useCookie from '../../hooks/useCookie';
+import { PiCookieDuotone } from "react-icons/pi";
+import { LandingPageGridItem } from '../../styled';
 
 const cookiePageAttributes = {
     dialogTitle: `Cookies and Advertising Choices`,
@@ -27,38 +29,41 @@ const DisclaimerItemWrapper = styled.div`
 
 const CookieWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    margin-top: 1rem;
+    border-radius: 0.333rem;
+    box-shadow:
+        inset 0 -3em 3em rgb(0 0 0 / 10%),
+        0 0 0 0px white,
+        0.3em 0.3em 0.5em rgb(0 0 0 / 10%);
 
     .parent-col {
-        grid-column: 3 / 11;
-        display: grid;
-        grid-template-rows: repeat(1, 1fr);
-        grid-gap: 0.333em;
         padding: 1em;
-        justify-items: center;
-        box-shadow: 1px 1px 8px rgba(100, 100, 100, 0.2);
+        display: grid;
+        grid-template-columns: auto auto;
     }
     .text-row {
-        align-self: end;
-        display: grid;
+        align-self: center;
+        display: flex;
     }
     .btn-row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        justify-content: flex-end;
         grid-gap: 0.333em;
+    }
+
+    .icon {
+        margin-top: 0.2rem;
+        margin-right: 0.3rem;
+        font-size: 1.333rem;
     }
 
     @media (max-width: 625px) {
-        padding: 0 16px;
         .parent-col {
-            grid-column: 2 / 12;
-        }
-    }
-
-    @media (max-width: 525px) {
-        padding: 0 0.8em;
-        .parent-col {
+            display: grid;
+            grid-template-columns: auto;
             grid-column: 1 / 13;
+            grid-gap: 0.5rem;
+            justify-self: center;
         }
     }
 
@@ -137,18 +142,21 @@ export default function CookieAgreement() {
     if (state.hasAgreed) return null;
 
     return (
-        <CookieWrapper>
-            <div className='parent-col'>
-                <div className='text-row'>
-                    <Text>Cookies and Advertising Choices</Text>
+        <LandingPageGridItem>
+            <CookieWrapper>
+                <div className='parent-col'>
+                    <div className='text-row'>
+                        <PiCookieDuotone className='icon' />
+                        <Text>Cookies and Advertising Choices</Text>
+                    </div>
+                    <div className='btn-row'>
+                        <Button aria-label='opt-out proceed' onPress={setCookie} variant='accent'>
+                            Proceed
+                        </Button>
+                        <CookieDialog />
+                    </div>
                 </div>
-                <div className='btn-row'>
-                    <Button aria-label='opt-out proceed' onPress={setCookie} variant='accent'>
-                        Proceed
-                    </Button>
-                    <CookieDialog />
-                </div>
-            </div>
-        </CookieWrapper>
+            </CookieWrapper>
+        </LandingPageGridItem>
     );
 }
